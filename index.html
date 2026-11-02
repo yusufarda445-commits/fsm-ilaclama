@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="FSM İlaçlama Hizmetleri — profesyonel ilaçlama, haşere ve kemirgen kontrolü, dezenfeksiyon hizmetleri.">
+        <title>FSM İlaçlama Hizmetleri | 7/24 Destek</title>
+        <style>
+            :root {
+                --green: #08752f;
+                --deep: #03451f;
+                --lime: #69c817;
+                --navy: #09264a;
+                --pale: #f3faef;
+                --white: #fff
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            html {
+                scroll-behavior: smooth
+            }
+
+            body {
+                margin: 0;
+                font-family: Arial,Helvetica,sans-serif;
+                color: #142238;
+                background: #fff;
+                line-height: 1.55
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none
+            }
+
+            .container {
+                width: min(1120px,92%);
+                margin: auto
+            }
+
+            header {
+                background: #fff;
+                position: sticky;
+                top: 0;
+                z-index: 5;
+                box-shadow: 0 3px 15px #00000012
+            }
+
+            .nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+                padding: 14px 0
+            }
+
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-weight: 900;
+                color: var(--deep);
+                font-size: 1.15rem
+            }
+
+            .mark {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: linear-gradient(145deg,#0a8b34,#03451f);
+                display: grid;
+                place-items: center;
+                color: #fff;
+                font-size: 1.25rem;
+                font-weight: 900;
+                border: 3px solid #9be34b
+            }
+
+            .navlinks {
+                display: flex;
+                gap: 22px;
+                font-weight: 700;
+                font-size: .92rem
+            }
+
+            .navlinks a:hover {
+                color: var(--green)
+            }
+
+            .call {
+                background: var(--green);
+                color: #fff;
+                padding: 11px 16px;
+                border-radius: 30px;
+                font-weight: 800
+            }
+
+            .hero {
+                background: linear-gradient(120deg,#eaf8e7 0%,#fff 55%,#e7f5ff 100%);
+                padding: 70px 0 60px;
+                overflow: hidden
+            }
+
+            .hero-grid {
+                display: grid;
+                grid-template-columns: 1.1fr .9fr;
+                align-items: center;
+                gap: 36px
+            }
+
+            .eyebrow {
+                color: var(--green);
+                font-weight: 900;
+                letter-spacing: 1.5px;
+                text-transform: uppercase
+            }
+
+            .hero h1 {
+                font-size: clamp(2.3rem,5vw,4.4rem);
+                line-height: 1.08;
+                color: var(--navy);
+                margin: 12px 0
+            }
+
+            .hero h1 span {
+                color: var(--green)
+            }
+
+            .hero p {
+                font-size: 1.12rem;
+                max-width: 620px
+            }
+
+            .actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-top: 25px
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 14px 20px;
+                border-radius: 12px;
+                font-weight: 800
+            }
+
+            .btn-primary {
+                background: var(--green);
+                color: #fff
+            }
+
+            .btn-outline {
+                border: 2px solid var(--green);
+                color: var(--green)
+            }
+
+            .hero-art {
+                min-height: 330px;
+                border-radius: 28px;
+                background: linear-gradient(145deg,#08752f,#023d1d);
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 28px;
+                box-shadow: 0 20px 45px #075c2b2b
+            }
+
+            .hero-art .house {
+                font-size: 6rem;
+                line-height: 1
+            }
+
+            .hero-art strong {
+                font-size: 2.3rem;
+                letter-spacing: 2px
+            }
+
+            .hero-art .tag {
+                font-size: 1.1rem;
+                color: #d8ffb7
+            }
+
+            .strip {
+                background: var(--deep);
+                color: #fff;
+                padding: 16px 0
+            }
+
+            .strip .container {
+                display: flex;
+                justify-content: space-around;
+                gap: 16px;
+                flex-wrap: wrap;
+                font-weight: 800
+            }
+
+            section {
+                padding: 66px 0
+            }
+
+            .section-title {
+                text-align: center;
+                margin: 0 0 12px;
+                font-size: 2.2rem;
+                color: var(--navy)
+            }
+
+            .section-sub {
+                text-align: center;
+                color: #58677a;
+                max-width: 720px;
+                margin: 0 auto 34px
+            }
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                gap: 18px
+            }
+
+            .card {
+                border: 1px solid #dce9dc;
+                border-radius: 18px;
+                padding: 23px;
+                background: #fff;
+                box-shadow: 0 8px 22px #063b1810
+            }
+
+            .card .icon {
+                font-size: 2rem
+            }
+
+            .card h3 {
+                color: var(--green);
+                margin: 10px 0
+            }
+
+            .card p {
+                margin: 0;
+                color: #4d5b6c
+            }
+
+            .sectors {
+                background: var(--pale)
+            }
+
+            .sector-grid {
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                gap: 15px
+            }
+
+            .sector {
+                background: #fff;
+                border-radius: 14px;
+                padding: 18px;
+                text-align: center;
+                font-weight: 800;
+                color: var(--navy);
+                border: 1px solid #d8ead2
+            }
+
+            .sector span {
+                display: block;
+                font-size: 1.8rem;
+                margin-bottom: 6px
+            }
+
+            .methods {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 18px
+            }
+
+            .method {
+                padding: 22px;
+                border-radius: 16px;
+                background: #f7fafc;
+                border-left: 5px solid var(--lime)
+            }
+
+            .why {
+                background: linear-gradient(120deg,#f1faed,#fff)
+            }
+
+            .why-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+                align-items: center
+            }
+
+            .checklist {
+                list-style: none;
+                padding: 0
+            }
+
+            .checklist li {
+                margin: 12px 0;
+                font-weight: 700
+            }
+
+            .checklist li:before {
+                content: "✓";
+                display: inline-grid;
+                place-items: center;
+                background: var(--green);
+                color: white;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                margin-right: 10px
+            }
+
+            .contact {
+                background: var(--deep);
+                color: #fff
+            }
+
+            .contact .section-title {
+                color: #fff
+            }
+
+            .contact .section-sub {
+                color: #d7eadb
+            }
+
+            .contact-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px
+            }
+
+            .contact-box {
+                background: #ffffff12;
+                border: 1px solid #ffffff2b;
+                border-radius: 18px;
+                padding: 25px
+            }
+
+            .contact-box h3 {
+                margin-top: 0
+            }
+
+            .contact-line {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.12rem;
+                font-weight: 800
+            }
+
+            .contact-line small {
+                display: block;
+                font-size: .82rem;
+                color: #c8e7d0;
+                font-weight: 400
+            }
+
+            .contact .btn {
+                background: #b8f238;
+                color: #073b1b;
+                margin-top: 14px
+            }
+
+            footer {
+                background: #022b15;
+                color: #d9eadf;
+                padding: 22px 0;
+                text-align: center;
+                font-size: .9rem
+            }
+
+            @media(max-width: 850px) {
+                .hero-grid,.why-grid,.contact-grid {
+                    grid-template-columns:1fr
+                }
+
+                .cards {
+                    grid-template-columns: repeat(2,1fr)
+                }
+
+                .sector-grid {
+                    grid-template-columns: repeat(2,1fr)
+                }
+
+                .methods {
+                    grid-template-columns: 1fr
+                }
+
+                .navlinks {
+                    display: none
+                }
+
+                .hero {
+                    padding: 45px 0
+                }
+            }
+
+            @media(max-width: 520px) {
+                .cards {
+                    grid-template-columns:1fr
+                }
+
+                .brand {
+                    font-size: .95rem
+                }
+
+                .mark {
+                    width: 40px;
+                    height: 40px
+                }
+
+                .hero-art {
+                    min-height: 250px
+                }
+
+                .strip .container {
+                    justify-content: center
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container nav">
+                <a class="brand" href="#anasayfa">
+                    <span class="mark">FSM</span>
+                    <span>
+                        FSM İLAÇLAMA<br>HİZMETLERİ
+                    </span>
+                </a>
+                <nav class="navlinks">
+                    <a href="#hizmetler">Hizmetler</a>
+                    <a href="#sektorler">Çözümler</a>
+                    <a href="#neden">Neden FSM?</a>
+                    <a href="#iletisim">İletişim</a>
+                </nav>
+                <a class="call" href="tel:05442685404">☎ 0544 268 54 04</a>
+            </div>
+        </header>
+        <main>
+            <section class="hero" id="anasayfa">
+                <div class="container hero-grid">
+                    <div>
+                        <div class="eyebrow">Profesyonel İlaçlama & Çevre Sağlığı</div>
+                        <h1>
+                            Sağlıklı ve <span>Hijyenik</span>
+                            Yaşam Alanları
+                        </h1>
+                        <p>Ev ve iş yerleriniz için haşere, kemirgen kontrolü ve dezenfeksiyon hizmetleri. İhtiyacınıza uygun profesyonel çözümlerle yanınızdayız.</p>
+                        <div class="actions">
+                            <a class="btn btn-primary" href="#iletisim">Ücretsiz Keşif & Bilgi</a>
+                            <a class="btn btn-outline" href="https://wa.me/905313783317" target="_blank" rel="noopener">WhatsApp’tan Ulaşın</a>
+                        </div>
+                    </div>
+                    <div class="hero-art">
+                        <div class="house">⌂ 🌿</div>
+                        <strong>FSM</strong>
+                        <div style="font-size:1.2rem;font-weight:800">İLAÇLAMA HİZMETLERİ</div>
+                        <p class="tag">Sağlığınız İçin, Doğru Tercih...</p>
+                    </div>
+                </div>
+            </section>
+            <div class="strip">
+                <div class="container">
+                    <span>✓ Konut & Apartman</span>
+                    <span>✓ Restoran & Kafe</span>
+                    <span>✓ Fabrika & Depo</span>
+                    <span>✓ Otel & Hastane</span>
+                    <span>☎ 7/24 Destek</span>
+                </div>
+            </div>
+            <section id="hizmetler">
+                <div class="container">
+                    <h2 class="section-title">Hizmetlerimiz</h2>
+                    <p class="section-sub">Haşere ve zararlılara karşı uygulama ihtiyaçlarınıza uygun hizmet seçenekleri.</p>
+                    <div class="cards">
+                        <article class="card">
+                            <div class="icon">🪳</div>
+                            <h3>Haşere ve Böcek İlaçlama</h3>
+                            <p>Hamamböceği, kalorifer böceği, tahtakurusu, pire, karınca ve gümüşçün gibi yürüyen haşerelere karşı çözümler.</p>
+                        </article>
+                        <article class="card">
+                            <div class="icon">🐭</div>
+                            <h3>Kemirgen Kontrolü</h3>
+                            <p>Fare ve sıçan mücadelesinde kilitli yem istasyonları ve biyosidal ürünlerle hijyenik koruma.</p>
+                        </article>
+                        <article class="card">
+                            <div class="icon">🦟</div>
+                            <h3>Uçar Zararlı İlaçlaması</h3>
+                            <p>Sinek, sivrisinek ve arı türlerine karşı indoor/outdoor sisleme ve ULV uygulamaları.</p>
+                        </article>
+                        <article class="card">
+                            <div class="icon">🧼</div>
+                            <h3>Dezenfeksiyon Hizmeti</h3>
+                            <p>Bakteri, virüs ve funguslara karşı dezenfeksiyon uygulamaları.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="sectors" id="sektorler">
+                <div class="container">
+                    <h2 class="section-title">Sektörel Çözümler</h2>
+                    <p class="section-sub">Farklı yaşam ve çalışma alanlarına uygun hizmet yaklaşımı.</p>
+                    <div class="sector-grid">
+                        <div class="sector">
+                            <span>🏠</span>
+                            Konut & Apartmanlar
+                        </div>
+                        <div class="sector">
+                            <span>🍽️</span>
+                            Restoran & Kafe (HACCP)
+                        </div>
+                        <div class="sector">
+                            <span>🏭</span>
+                            Fabrika & Depolar
+                        </div>
+                        <div class="sector">
+                            <span>🏨</span>
+                            Oteller & Hastaneler
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <h2 class="section-title">Uygulama Yöntemlerimiz</h2>
+                    <p class="section-sub">Alan ve ihtiyaca göre seçilen yöntemler.</p>
+                    <div class="methods">
+                        <div class="method">
+                            <h3>Jel İlaçlama</h3>
+                            <p>Kokusuz uygulama seçeneği.</p>
+                        </div>
+                        <div class="method">
+                            <h3>ULV (Soğuk Sisleme)</h3>
+                            <p>İnce damla teknolojisi ile uygulama.</p>
+                        </div>
+                        <div class="method">
+                            <h3>Sıvı İlaçlama</h3>
+                            <p>Dış mekan ve geniş alanlar için uygulama.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="why" id="neden">
+                <div class="container why-grid">
+                    <div>
+                        <h2 class="section-title" style="text-align:left">Neden FSM?</h2>
+                        <p>Sağlıklı ve hijyenik yaşam alanları için profesyonel hizmet yaklaşımımız.</p>
+                        <ul class="checklist">
+                            <li>Müşteri memnuniyetine odaklı hizmet</li>
+                            <li>Kokusuz uygulama seçenekleri</li>
+                            <li>İşlem sonrası Haşere Kontrol Raporu</li>
+                            <li>7/24 destek hatları</li>
+                        </ul>
+                    </div>
+                    <div class="hero-art" style="min-height:260px">
+                        <div style="font-size:4rem">🌿 🛡️</div>
+                        <strong style="font-size:1.8rem">FSM GÜVENCESİ</strong>
+                        <p class="tag">Sağlıklı ve Hijyenik Yaşam Alanları</p>
+                    </div>
+                </div>
+            </section>
+            <section class="contact" id="iletisim">
+                <div class="container">
+                    <h2 class="section-title">Ücretsiz Keşif & Bilgi</h2>
+                    <p class="section-sub">Hizmetlerimiz hakkında bilgi almak için bize ulaşın.</p>
+                    <div class="contact-grid">
+                        <div class="contact-box">
+                            <h3>7/24 Destek Hatlarımız</h3>
+                            <a class="contact-line" href="tel:05442685404">
+                                ☎ 0544 268 54 04<small>Telefon</small>
+                            </a>
+                            <a class="contact-line" href="tel:+905313783317">
+                                ☎ +90 531 378 33 17<small>Telefon / WhatsApp</small>
+                            </a>
+                            <a class="btn" href="https://wa.me/905313783317" target="_blank" rel="noopener">WhatsApp ile Mesaj Gönder</a>
+                        </div>
+                        <div class="contact-box">
+                            <h3>E-posta</h3>
+                            <a class="contact-line" href="mailto:servettek123@gmail.com">✉ servettek123@gmail.com</a>
+                            <p>FSM İlaçlama Hizmetleri Ltd. Şti.</p>
+                            <p>Sağlığınız İçin, Doğru Tercih...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                © <span id="year">2026</span>
+                FSM İlaçlama Hizmetleri Ltd. Şti. • Tüm hakları saklıdır.
+            </div>
+        </footer>
+    </body>
+</html>
